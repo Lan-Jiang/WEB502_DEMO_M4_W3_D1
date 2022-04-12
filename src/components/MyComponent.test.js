@@ -17,24 +17,29 @@ describe("MyComponent", () => {
     const component = shallow(<MyComponent />);
     const form = component.find('input');
     // when
-    form.props().onChange({target: {
-      name: 'myName',
-      value: 'myValue'
-    }});
+    form.props().onChange({
+      target: {
+        name: "myName",
+        value: "myValue",
+      },
+    });
     // then
     expect(component.state('input')).toBeDefined();
   });
-  it("should create an entry in component state with the event value", ()=>{
+  it("should create an entry in component state with the event value", () => {
     // given
     const component = shallow(<MyComponent />);
-    const form = component.find('input');
-    // when 
-    form.props().onChange({target: {
-      name: 'myName',
-      value: 'myValue'
-    }});
-    // then
-    expect(component.state('input')).toEqual('myValue');
+    const form = component.find("input");
+    // when
+    form.props().onChange({
+      target: {
+        name: "myName",
+        value: "myValue",
+      },
+    });
+    //then
+    expect(component.state("input")).toEqual("myValue");
   });
 });
+
 
